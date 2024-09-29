@@ -14,13 +14,11 @@ import {
 import './App.css'; 
 import Appbar from './Appbar';
 
-// Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faShoppingCart, faTimesCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -32,7 +30,7 @@ ChartJS.register(
 );
 
 const App = () => {
-  const [month, setMonth] = useState('November'); // Default to November
+  const [month, setMonth] = useState('November'); 
   const [transactions, setTransactions] = useState([]);
   const [statistics, setStatistics] = useState({
     totalSales: 0,
@@ -41,7 +39,7 @@ const App = () => {
   });
   const [barChartData, setBarChartData] = useState([]);
   const [pieChartData, setPieChartData] = useState([]);
-  const [searchInput, setSearchInput] = useState(''); // State for search input
+  const [searchInput, setSearchInput] = useState(''); 
 
   useEffect(() => {
     const fetchTransactions = async () => {
@@ -108,9 +106,9 @@ const App = () => {
 
   // Render statistics as cards
   const renderStatistics = () => {
-    const totalSalesPercentage = (statistics.totalSales / 10000) * 100; // Example for percentage calculation
-  const soldItemsPercentage = (statistics.totalSold / 100) * 100; // Example for percentage calculation
-  const notSoldItemsPercentage = (statistics.totalNotSold / 100) * 100; // Example for percentage calculation
+    const totalSalesPercentage = (statistics.totalSales / 10000) * 100; 
+  const soldItemsPercentage = (statistics.totalSold / 100) * 100; 
+  const notSoldItemsPercentage = (statistics.totalNotSold / 100) * 100; 
 
   return (
     <div className="stat-container">
@@ -131,9 +129,9 @@ const App = () => {
         value={soldItemsPercentage} 
         text={`${statistics.totalSold}`} 
         styles={{
-          path: { stroke: '#2196F3' }, // Path color
+          path: { stroke: '#2196F3' }, 
           text: { fill: '#fff', fontSize: '15px',textShadow: '0 0 5px #2196F3, 0 0 10px #2196F3, 0 0 15px #2196F3' }, // Smaller text size
-          trail: { stroke: '#d6d6d6' }, // Trail color
+          trail: { stroke: '#d6d6d6' },
         }}
       />
       <h3 style={{color:'#2196F3'}}>Sold Items</h3>
@@ -143,9 +141,9 @@ const App = () => {
         value={notSoldItemsPercentage} 
         text={`${statistics.totalNotSold}`} 
         styles={{
-          path: { stroke: '#f44336' }, // Path color
+          path: { stroke: '#f44336' }, 
           text: { fill: '#fff', fontSize: '15px',textShadow: '0 0 5px #f44336, 0 0 10px #f44336, 0 0 15px #f44336' }, // Smaller text size
-          trail: { stroke: '#d6d6d6' }, // Trail color
+          trail: { stroke: '#d6d6d6' }, 
         }}
       />
       <h3  style={{color:'#f44336'}}>Not Sold Items</h3>
@@ -154,71 +152,66 @@ const App = () => {
     );
   }
 
-  // Render transactions table
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5; // Number of items to display per page
+  const itemsPerPage = 5; 
 
-  // Update the renderTable function
   // Render transactions table with pagination
   const renderTable = () => {
     const filteredTransactions = transactions.filter(transaction => {
-        const lowerCaseSearch = searchInput.toLowerCase();
-        return (
-            transaction.title.toLowerCase().includes(lowerCaseSearch) ||
-            transaction.description.toLowerCase().includes(lowerCaseSearch) ||
-            transaction.price.toString().includes(lowerCaseSearch) || 
-            transaction.category.toLowerCase().includes(lowerCaseSearch) ||
-            (transaction.sold ? 'sold'.includes(lowerCaseSearch) : 'not sold'.includes(lowerCaseSearch))
-        );
+      const lowerCaseSearch = searchInput.toLowerCase();
+      return (
+        transaction.title.toLowerCase().includes(lowerCaseSearch) ||
+        transaction.description.toLowerCase().includes(lowerCaseSearch) ||
+        transaction.price.toString().includes(lowerCaseSearch) ||
+        transaction.category.toLowerCase().includes(lowerCaseSearch) ||
+        (transaction.sold ? 'sold'.includes(lowerCaseSearch) : 'not sold'.includes(lowerCaseSearch))
+      );
     });
-
+  
     // Calculate the indices for items to be displayed on the current page
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = filteredTransactions.slice(indexOfFirstItem, indexOfLastItem);
-
-    // In your renderTable function:
-
-return (
-  <div className="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Date of Sale</th>
-          <th>Category</th>
-          <th>Sold</th>
-        </tr>
-      </thead>
-      <tbody>
-        {currentItems.map((transaction) => (
-          <tr key={transaction.id}>
-            <td>
-              <img 
-                src={transaction.image} 
-                alt={transaction.title} 
-                className="product-image"
-              />
-            </td> 
-            <td>{transaction.title}</td>
-            <td>{transaction.description}</td>
-            <td>${transaction.price.toFixed(2)}</td>
-            <td>{new Date(transaction.dateOfSale).toLocaleDateString()}</td>
-            <td>{transaction.category}</td>
-            <td>{transaction.sold ? 'Sold' : 'Not Sold'}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
-
+  
+    return (
+      <div className="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Date of Sale</th>
+              <th>Category</th>
+              <th>Sold</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentItems.map((transaction) => (
+              <tr key={transaction.id}>
+                <td>
+                  <img
+                    src={transaction.image}
+                    alt={transaction.title}
+                    className="product-image"
+                  />
+                </td>
+                <td>{transaction.title}</td>
+                <td>{transaction.description}</td>
+                <td>${transaction.price.toFixed(2)}</td>
+                <td>{transaction.dateOfSale || 'N/A'}</td> 
+                <td>{transaction.category}</td>
+                <td>{transaction.sold ? 'Sold' : 'Not Sold'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
   };
-
+  
 
   // Render pagination controls
   const renderPagination = (totalItems) => {
@@ -272,7 +265,7 @@ return (
 
       <h2 style={{textAlign:'center'}}>Transactions</h2>
       
-      {/* Search Input Positioned Below Transactions Heading */}
+      {/* Search Input */}
       <div className="search-container">
         <div className="search-wrapper">
           <FontAwesomeIcon icon={faSearch} className="search-icon" color='secondary'/>
@@ -280,7 +273,7 @@ return (
             type="text"
             placeholder="Search transactions"
             value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)} // Update the search input state
+            onChange={(e) => setSearchInput(e.target.value)} 
             className="search-input"
           />
         </div>
@@ -306,19 +299,19 @@ return (
                   scales: {
                     x: {
                       ticks: {
-                        color: 'white', // Set x-axis text color to white
+                        color: 'white', 
                       },
                       
                       grid: {
-                        color: 'rgba(255, 255, 255, 0.1)', // Optional: Set grid line color
+                        color: 'rgba(255, 255, 255, 0.1)',
                       },
                     },
                     y: {
                       ticks: {
-                        color: 'white', // Set y-axis text color to white
+                        color: 'white', 
                       },
                       grid: {
-                        color: 'rgba(255, 255, 255, 0.1)', // Optional: Set grid line color
+                        color: 'rgba(255, 255, 255, 0.1)', 
                       },
                     }
                   },
@@ -345,7 +338,7 @@ return (
                   maintainAspectRatio: false,
                   plugins: {
                       legend: { position: 'right',labels: {
-                    color: 'white', // Set legend text color to white
+                    color: 'white', 
                   } },
                       title: { display: true, text: 'Category Distribution',color:'white' },
                   },
