@@ -1,10 +1,9 @@
-/* Base styles */
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom right, #1e1e1e, #121212); /* Dark background */
+  background: linear-gradient(to bottom right, #1e1e1e, #121212);
   margin: 0;
   padding: 20px;
-  color: #ffffff; /* Light text color */
+  color: #ffffff;
 }
 
 .container {
@@ -13,12 +12,6 @@ body {
   padding: 20px;
   margin-top: 80px;
 }
-
-/* h1 {
-  text-align: center;
-  color: #ffffff; 
-  margin-bottom: 30px;
-} */
 
 /* Month Dropdown */
 .filter-container {
@@ -30,21 +23,22 @@ body {
   font-weight: bold;
   font-size: 16px;
   margin-right: 10px;
-  color: #ffffff; /* Light color for label */
+  color: #ffffff;
 }
 
 .month-dropdown {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #444; /* Darker border */
-  background-color: #333; /* Dark dropdown background */
-  color: #ffffff; /* Light text for dropdown */
+  border: 1px solid #444;
+  background-color: #333;
+  color: #ffffff;
 }
 
-/* Search Container Styling */
+/* search input container */
+
 .search-container {
   display: flex;
-  justify-content: center; /* Center align the search container */
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -59,88 +53,89 @@ body {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #2890ff; /* Blue icon */
+  color: #2890ff;
   font-size: 18px;
 }
 
 .search-input {
-  padding: 12px 10px 12px 35px; /* Padding to make space for the icon */
+  padding: 12px 10px 12px 35px;
   width: 100%;
-  border: 1px solid #444; /* Darker border */
+  border: 1px solid #444;
   border-radius: 5px;
   font-size: 16px;
-  background-color: #333; /* Dark input background */
-  color: #ffffff; /* Light text in input */
+  background-color: #333;
+  color: #ffffff;
 
-  &::placeholder{
-    color: rgb(121, 121, 121) ;
+  &::placeholder {
+    color: rgb(121, 121, 121);
   }
 }
 
-/* Responsive Table Wrapper */
+/* table style */
+
 .table-responsive {
   width: 100%;
-  overflow-x: auto; /* Enable horizontal scroll if needed */
-  margin-top: 20px; /* Maintain space above the table */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-  border-radius: 8px; /* Ensure corners are still rounded */
+  overflow-x: auto;
+  margin-top: 20px;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
 }
 
-/* Maintain previous styles for the table */
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   border-radius: 8px;
-  overflow: hidden; /* Ensures rounded corners are applied */
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }
 
-table th, table td {
+table th,
+table td {
   padding: 15px;
   text-align: left;
-  border: 1px solid #444; /* Darker border */
-  color: #ffffff; /* Light text color for table */
+  border: 1px solid #444;
+  color: #ffffff;
 }
 
 table th {
-  background-color: #2890ff; /* Blue header */
+  background-color: #2890ff;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom: 2px solid #0056b3; /* Slightly darker border */
+  border-bottom: 2px solid #0056b3;
 }
 
 table tr:nth-child(even) {
-  background-color: #2a2a2a; /* Dark grey for even rows */
+  background-color: #2a2a2a;
 }
 
 table tr:nth-child(odd) {
-  background-color: #1e1e1e; /* Darker grey for odd rows */
+  background-color: #1e1e1e;
 }
 
 table tr:hover {
-  background-color: #555; /* Light grey on hover */
-  transition: background-color 0.3s ease; /* Smooth transition */
+  background-color: #555;
+  transition: background-color 0.3s ease;
 }
 
 table tr td {
-  font-size: 14px; /* Slightly increase font size */
-  color: #ffffff; /* Light text color */
+  font-size: 14px;
+  color: #ffffff;
 }
 
 table tr td:first-child {
-  font-weight: bold; /* Highlight first column */
+  font-weight: bold;
 }
 
 /* Product Image Styles */
 .product-image {
-  width: 50px; /* Adjust to fit your layout */
-  height: 50px; /* Ensure consistent size */
-  object-fit: cover; /* Maintain aspect ratio and avoid stretching */
-  border-radius: 5px; /* Optional: rounded corners for a polished look */
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
 }
-
 
 /* Pagination styles */
 .pagination {
@@ -153,7 +148,7 @@ table tr td:first-child {
 
 .pagination-button {
   padding: 10px 20px;
-  background-color: #2890ff; /* Blue button */
+  background-color: #2890ff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -162,108 +157,48 @@ table tr td:first-child {
 }
 
 .pagination-button:disabled {
-  background-color: #555; /* Darker button when disabled */
+  background-color: #555;
   cursor: not-allowed;
 }
 
 .pagination-button:hover:not(:disabled) {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }
 
 .page-info {
   font-weight: bold;
-  color: #ffffff; /* Light color for pagination text */
+  color: #ffffff;
 }
 
-/* App.css */
-
-/* App.css */
 
 /* Statistics Cards Container */
 .stat-container {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0; /* Spacing between sections */
-  gap: 20px; /* Space between cards */
+  margin: 40px 0;
+  gap: 20px;
 }
 
-/* Individual Stat Card Styles */
 .stat-card {
   flex: 1;
-  min-width: 120px; /* Minimum width to maintain aspect ratio */
-  height: 220px; /* Fixed height for cards */
-  /* background-color: #333; */
+  min-width: 120px;
+  height: 220px;
   color: #fff;
-  /* border-radius: 15px;  */
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  */
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease;  */
-  text-align: center; /* Center text */
-  display: flex; /* Use flex to center content */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center items vertically */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-
-/* .stat-card:hover {
-  transform: translateY(-5px);   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
-} */
-
-/* Heading Styles */
 .stat-card h3 {
-  margin-top: 15px; /* Space above heading */
-  font-size: 18px; /* Smaller heading font size */
-  
-  
+  margin-top: 15px;
+  font-size: 18px;
 }
 
-/* Adjust Circular Progress Bar Styles */
 .circular-progress {
   justify-content: center;
 }
 
-
-
-/* .stat-card:hover .stat-icon {
-  transform: scale(1.1); 
-  opacity: 0.7; 
-} */
-
-/* Specific card styles with linear gradients */
-/* .total-sales-card {
-  background: #1e3c72; 
-background: -webkit-linear-gradient(to right, #2a5298, #1e3c72); 
-background: linear-gradient(to right, #2a5298, #1e3c72); 
-
-}
-
-.sold-items-card {
-  background: linear-gradient(to right, #ED8F03, #f9a135);
-}
-
-.not-sold-items-card {
-  background: linear-gradient(to right, #FF4B2B, #FF416C);
-} */
-
-/* Other existing styles remain unchanged... */
-
-/* .stat-card h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-.stat-card p {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.stat-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  color: #ffffff80; 
-} */
 
 /* Chart Container Styles */
 .chart-container {
@@ -276,128 +211,129 @@ background: linear-gradient(to right, #2a5298, #1e3c72);
 .chart {
   flex: 1;
   padding: 30px;
-  /* background: #333; 
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); */
-  height: 500px; /* Fixed height for both charts */
-  position: relative; /* For positioning the canvas */
-  /* border: 1px solid #444; */
+  height: 500px;
+  position: relative;
 }
 
 .chart canvas {
-  height: 100% !important; /* Ensure the canvas takes full height of the chart */
-  width: 100% !important; /* Ensure the canvas takes full width of the chart */
+  height: 100% !important;
+  width: 100% !important;
 }
 
 @media (max-width: 1024px) {
   .circular-progress-container {
-      width: 70px; /* Slightly smaller for tablets */
-      height: 70px;
+    width: 70px;
+    height: 70px;
   }
 
   .stat-card h3 {
-      font-size: 16px; /* Adjust text size for tablets */
+    font-size: 16px;
   }
 
-  table th, table td {
-    padding: 12px; /* Reduce padding for medium screens */
-    font-size: 14px; /* Reduce font size slightly for better fit */
+  table th,
+  table td {
+    padding: 12px;
+    font-size: 14px;
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .chart-container {
-    flex-direction: column; /* Stack charts on smaller screens */
+    flex-direction: column;
   }
 
   .chart {
-    margin-bottom: 20px; /* Add space between stacked charts */
-    height: 300px; /* Set a fixed height for mobile devices */
-    max-height: 400px; /* Prevent it from becoming too long */
+    margin-bottom: 20px;
+    height: 300px;
+    max-height: 400px;
   }
 
   .stat-container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
-  table th, table td {
-    padding: 10px; /* Further reduce padding for small screens */
-    font-size: 13px; /* Smaller font size for better readability on small screens */
+  table th,
+  table td {
+    padding: 10px;
+    font-size: 13px;
   }
+
   .table-responsive {
-    overflow-x: auto; /* Ensure horizontal scrolling for smaller screens */
+    overflow-x: auto;
   }
 
   .search-container {
-      margin-bottom: 10px; /* Reduce bottom margin for smaller screens */
+    margin-bottom: 10px;
   }
 
   .pagination {
-      flex-direction: column; /* Stack pagination buttons on small screens */
+    flex-direction: column;
   }
 
   .pagination-button {
-      width: 100%; /* Full width for buttons */
-      margin-bottom: 10px; /* Add space between buttons */
+    width: 100%;
+    margin-bottom: 10px;
   }
+
   .circular-progress-container {
-    width: 60px; /* Smaller width for mobile devices */
+    width: 60px;
     height: 60px;
-}
+  }
 
-.stat-card h3 {
-    font-size: 14px; /* Adjust text size for mobile */
-}
+  .stat-card h3 {
+    font-size: 14px;
+  }
 
-.stat-container {
-    flex-direction: column; /* Stack cards vertically for better view on small screens */
-    gap: 10px; /* Smaller gap between cards */
-}
+  .stat-container {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 480px) {
   .search-wrapper {
-      max-width: 90%; /* Allow for more flexibility on smaller devices */
+    max-width: 90%;
   }
 
   .search-input {
-      font-size: 14px; /* Reduce font size for smaller screens */
+    font-size: 14px;
   }
 
   h1 {
-      font-size: 24px; /* Adjust heading size */
+    font-size: 24px;
   }
 
   .chart {
-    height: 250px; /* Further reduce height for very small screens */
-    max-height: 300px; /* Prevent it from becoming too long */
-    padding: 15px; /* Further reduce padding for smaller devices */
+    height: 250px;
+    max-height: 300px;
+    padding: 15px;
   }
 
   .circular-progress-container {
-    width: 50px; /* Further reduce for very small screens */
+    width: 50px;
     height: 50px;
   }
 
-    .stat-card {
-        padding: 8px; /* Reduce padding for small screens */
-    }
+  .stat-card {
+    padding: 8px;
+  }
 
-    .stat-card h3 {
-        font-size: 13px; /* Smaller font size */
-    }
+  .stat-card h3 {
+    font-size: 13px;
+  }
 
-    table th, table td {
-      padding: 8px; /* Further reduce padding for very small screens */
-      font-size: 12px; /* Smaller font size for mobile devices */
-    }
-    .table-responsive {
-      overflow-x: scroll; /* Enable scrolling for narrow mobile devices */
-    }
-  
-    /* Stack table cells vertically on small screens for better readability (Optional) */
-    table th, table td {
-      white-space: nowrap; /* Prevent text wrapping in cells */
-    }
+  table th,
+  table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .table-responsive {
+    overflow-x: scroll;
+  }
+
+  table th,
+  table td {
+    white-space: nowrap;
+  }
 }

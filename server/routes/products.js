@@ -3,7 +3,6 @@ const axios = require('axios');
 const Product = require('../models/Product');
 const router = express.Router();
 
-
 // Initialize Database with seed data from external API
 router.get('/initialize', async (req, res) => {
   try {
@@ -20,7 +19,7 @@ router.get('/initialize', async (req, res) => {
             category: item.category,
             image: item.image,
             sold: item.sold,
-            dateOfSale: new Date(item.dateOfSale), 
+            dateOfSale: new Date(item.dateOfSale),
           },
         },
         upsert: true, // Insert if the record does not exist
@@ -67,9 +66,9 @@ router.get('/transactions', async (req, res) => {
         }
         : {}),
     })
-    .skip((page - 1) * perPage)
-    .limit(parseInt(perPage))
-    .exec();
+      .skip((page - 1) * perPage)
+      .limit(parseInt(perPage))
+      .exec();
 
     const formattedTransactions = transactions.map(transaction => ({
       id: transaction.id,
