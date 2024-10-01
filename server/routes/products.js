@@ -36,7 +36,7 @@ router.get('/initialize', async (req, res) => {
 
 // API: List transactions with search and pagination
 router.get('/transactions', async (req, res) => {
-  const { page = 1, perPage = 10, search = '', month } = req.query;
+  const {  month } = req.query;
 
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -54,21 +54,9 @@ router.get('/transactions', async (req, res) => {
         $and: [
           { $eq: [{ $month: "$dateOfSale" }, monthIndex + 1] },
         ],
-      },
-      ...(search
-        ? {
-          $or: [
-            { title: { $regex: search, $options: 'i' } },
-            { description: { $regex: search, $options: 'i' } },
-            { category: { $regex: search, $options: 'i' } },
-            { price: parseFloat(search) }
-          ],
-        }
-        : {}),
+      },    
     })
-      .skip((page - 1) * perPage)
-      .limit(parseInt(perPage))
-      .exec();
+      
 
     const formattedTransactions = transactions.map(transaction => ({
       id: transaction.id,
