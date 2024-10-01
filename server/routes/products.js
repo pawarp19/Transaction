@@ -3,12 +3,6 @@ const axios = require('axios');
 const Product = require('../models/Product');
 const router = express.Router();
 
-// Helper function to get start and end dates of a specific month/year
-const getMonthDateRange = (year, monthIndex) => {
-  const startDate = new Date(year, monthIndex, 1);
-  const endDate = new Date(year, monthIndex + 1, 1);
-  return { startDate, endDate };
-};
 
 // Initialize Database with seed data from external API
 router.get('/initialize', async (req, res) => {
